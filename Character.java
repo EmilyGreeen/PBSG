@@ -5,6 +5,13 @@
  * @author MrGreen
  * @version 0.5
  */
+
+import clas.*;
+import clas.Class;
+import draw.DrawAlignement;
+import race.*;
+import roll.RollDice;
+
 public class Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
@@ -49,25 +56,7 @@ public class Character
         CName = "Nott";
         CRollResults = rollCharacterDie();
         /*
-         * [0] = Sex
-         * [1] = Race
-         * [2] = Homeland
-         * [3] = Foreign Homeland
-         * [4] = Unusual Homeland
-         * [5] = Parents
-         * [6] = Siblings
-         * [7] = Adopted Siblings #1
-         * [8] = Adopted Siblings #2
-         * [9] = Circumstance of Birth
-         * [10] = Parents Profession _ low birth
-         * [11] = Parents Profession
-         * [12] = Parents Profession - high birth
-         * [13] = Adoptive Parents Race
-         * [14] = Nobility
-         * [15] = Major Childhood Even
-         * [16] = Crime
-         * [17] = Punishment
-         * [18] = Class
+         * SEE rollCharacterDie for information on index significance
          */
         switch(CRollResults[0]){
             case 1:

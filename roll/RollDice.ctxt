@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=RollDice
+comment0.text=\r\n\ Defines\ methods\ for\ rolls\ and\ random\ events.\r\n\r\n\ @author\ MrGreen\r\n\ @version\ 0.1\r\n
+comment1.params=
+comment1.target=RollDice()
+comment1.text=\r\n\ Constructeur\ d'objets\ de\ classe\ Random\r\n
+comment2.params=y
+comment2.target=int\ rollDY(int)
+comment2.text=\r\n\ Method\ to\ roll\ a\ dice\ with\ y\ sides.\r\n\r\n\ @param\ \ y\ \ \ number\ of\ sides\ on\ the\ rolled\ dice\r\n\ @return\ \ \ \ \ the\ roll\ of\ a\ y-sided\ dice\r\n
+comment3.params=y\ x
+comment3.target=int\ rollDY(int,\ int)
+numComments=4

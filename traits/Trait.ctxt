@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Trait
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Trait\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=ID\ selectable\ name\ lore\ effect
+comment1.target=Trait(int,\ boolean,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=int\ getID()
+comment3.params=
+comment3.target=boolean\ isSelectable()
+comment4.params=
+comment4.target=java.lang.String\ getName()
+comment5.params=
+comment5.target=java.lang.String\ getLore()
+comment6.params=
+comment6.target=java.lang.String\ getEffect()
+numComments=7

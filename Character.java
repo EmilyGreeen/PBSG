@@ -576,8 +576,8 @@ public class Character
 
         if(adolescence[0]=="Bard" && adolescence[1]=="For Love: When you were young, you tried to express yourself to your beloved using song or poetry. Driven by desire, you refined your skill and learned to articulate raw emotion in story and song. You gain access to the Ear for Music religion trait and the True Love story feat. You roll a d12 instead of a d20 on Table 1–56: Romantic Relationships.")
         {relationshipEventFlag=1;}
-        while(i<=2){
-            System.out.println("adolescence["+i+"] = "+adolescence[i]);
+        for (String str : adolescence){
+            System.out.println("adolescence["+i+"] = "+str);
             i++;
         }
         return adolescence;

@@ -7,14 +7,9 @@ package draw;
  * @version 12/10/2019
  */
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
 /** Custom Drawing Code Template */
 // A Swing application extends javax.swing.JFrame

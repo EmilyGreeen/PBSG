@@ -11,6 +11,7 @@ import clas.Class;
 import draw.DrawAlignement;
 import race.*;
 import roll.RollDice;
+import org.json.*;
 
 public class Character
 {

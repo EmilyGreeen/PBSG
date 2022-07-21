@@ -1,3 +1,4 @@
+package traits;
 
 /**
  * Write a description of class Trait here.

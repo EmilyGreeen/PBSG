@@ -61,7 +61,7 @@ public class Character
      * @throws IOException
      * @throws FileNotFoundException
      */
-    public Character() throws FileNotFoundException, IOException, ParseException
+    public Character()
     {
         // initialisation des variables d'instance
         CName = "Nott";
@@ -224,26 +224,26 @@ public class Character
     public String[] setCircumstanceOfBirth(String[] CH){
         int [] cOBDieValue = {40,65,70,72,77,81,82,84,85,87,88,90,92,94,95,96,97,98,99,100,-1};
         String[] cOBResult =
-            {   "Lower-Class Birth",
-                "Middle-Class Birth",
-                "Noble Birth",
-                "Adopted Outside Your Race",
-                "Adopted",
-                "Bastard Born",
-                "Blessed Birth",
-                "Born of Violence",
-                "Born out of Time",
-                "Born into Bondage",
-                "Cursed Birth",
-                "Dishonored Family",
-                "Heir to a Legacy",
-                "Left to Die",
-                "Marked by the Gods",
-                "Energy Infused",
-                "Progeny of Power",
-                "Prophesied",
-                "Reincarneted",
-                "The Omen",
+            {   "Born in a Lower-Class family,",
+                "Born in a Middle-Class family,",
+                "Born in a Noble family,",
+                "You were Adopted Outside Your Race,",
+                "You were Adopted.",
+                "Born a Bastard.",
+                "Your Birth was a Blessed one.",
+                "You were Born of Violence.",
+                "You were Born out of Time.",
+                "You were Born into Bondage.",
+                "Your Birth was a Cursed one",
+                "You were born of a Dishonored Family,",
+                "You were born Heir to a Legacy.",
+                "You were Left to Die at birth.",
+                "At birth, you were Marked by the Gods.",
+                "You were born Energy Infused.",
+                "You were born a Progeny of Power.",
+                "Your birth was Prophesied.",
+                "You were Reincarnated.",
+                "At birth, you were seen as an Omen.",
                 "ERROR"                 
             };
 
@@ -299,25 +299,24 @@ public class Character
     }
 
     public String[] setParentsProfession(int i,String[] CH){
-        int [] pPDieValue={5,25,30,34,37,40,55,70,85,95,100,-1};
+        int [] pPDieValue={5,25,30,34,37,40,55,70,85,95,100};
         String [] pPResult={
-                "Parents were Slaves",
-                "Parents were Serfs/Peasants",
-                "Parents were Entertainers",
-                "Parents were Soldiers",
-                "Parents were Sailors",
-                "Parents were Thieves",
-                "Parents were Yeomen",
-                "Parents were Tradespeople",
-                "Parents were Artisans",
-                "Parents were Merchants",
-                "Parents were Clergy or Cultists",
-                "ERROR"
+                "your parents were Slaves.",
+                "your parents were Serfs/Peasants.",
+                "your parents were Entertainers.",
+                "your parents were Soldiers.",
+                "your parents were Sailors.",
+                "your parents were Thieves.",
+                "your parents were Yeomen.",
+                "your parents were Tradespeople.",
+                "your parents were Artisans.",
+                "your parents were Merchants.",
+                "your parents were Clergy or Cultists."
             };
         int j=0;
         switch(i){
             case 0: //CoB = "Born into Bondage"
-            CH[13]="Parents were Slaves";
+            CH[13]="your parents were Slaves";
             break;
             case 1: //CoB = "Lower-Class Birth"
             while(CRollResults[10]>pPDieValue[j]){j++;}
@@ -343,16 +342,15 @@ public class Character
 
     public String setNobleBirth(){
         int i = 0;
-        int [] nBDieValue={60,78,85,91,96,99,100,-1};
+        int [] nBDieValue={60,78,85,91,96,99,100};
         String [] nBResult={
-                "Gentry",
-                "Knight",
-                "Baron",
-                "Count",
-                "Duke",
-                "Minor Prince",
-                "Regent",
-                "ERROR"
+                "your parents were Gentry.",
+                "one or both your parents were Knight(s).",
+                "they held the title of Baron.",
+                "they held the title of Count.",
+                "they held the title of Duke.",
+                "one or both your parents were Minor Prince(sse)(s).",
+                "one or both your parents were Regent(s)."
             };
         while(CRollResults[14]>nBDieValue[i]){i++;}
         return nBResult[i];
@@ -360,51 +358,44 @@ public class Character
 
     public String setAdoptiveParentsRace(){
         int i = 0;
-        int [] aPRieValue={5,10,13,19,25,70,95,100,-1};
+        int [] aPRieValue={5,10,13,19,25,70,95,100};
         String [] aPRResult={
-                "Adopted by Dragons",                   //0
-                "Adopted by the Fey",                   //1
-                "Raised Among the Dead",                //2
-                "Raised by Angels",                     //3
-                "Raised by Beasts",                     //4
-                "Raised by Civilized Humanoids:(TODO)", //5
-                "Raised by Savage Humanoids:(TODO)",    //6
-                "Fiends Raised",                        //7
-                "ERROR"
+                "by Dragons",                   //0
+                "by the Fey",                   //1
+                "and raised Among the Dead",                //2
+                "and raised by Angels",                     //3
+                "and raised by Beasts",                     //4
+                "and raised by Civilized Humanoids:(TODO)", //5
+                "and raised by Savage Humanoids:(TODO)",    //6
+                "and raised by Fiends"                     //7
             };
         while(CRollResults[13]>aPRieValue[i]){i++;}
         return aPRResult[i];
     }
 
     public String[] setMajorChildhoodEvent(String[] CH){
-        int i = 0;
-        int [] mCHEDieValue={5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,-1};
-        String [] mCHEResult={
-                "Academy Training",             //1
-                "Betrayal",                     //2
-                "Bullied",                      //3
-                "Competition Champion",         //4
-                "Death in the Family",          //5
-                "Died",                         //6
-                "Fall of a Major Power",        //7
-                "Fell in With a Bad Crowd",     //8
-                "First Kill",                   //9
-                "Troubled First Love",          //10
-                "Imprisoned",                   //11
-                "Inheritance",                  //12
-                "Kidnapped",                    //13
-                "Magical Gift",                 //14
-                "Major Disaster",               //15
-                "Mentorship/Patronage",         //16
-                "Met a Fantastic Creature",     //17
-                "Ordinary Childhood",           //18
-                "Raiders",                      //19
-                "The War",                      //20
-                "ERROR"
-            };
-        while(CRollResults[15]>mCHEDieValue[i]){i++;}
-        CH[16]=mCHEResult[i];
-        switch(i){
+
+        JSONParser parser = new JSONParser();
+        JSONObject eventJson;
+        
+        try {
+            eventJson = (JSONObject) parser.parse(new FileReader("json\\MajorEvent.json"));
+            JSONArray eventArrayJson = (JSONArray) eventJson.get("event");
+
+            CH[16] = (String) eventArrayJson.get((int) CRollResults[15]%20);
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        switch(CRollResults[15]%20){
             case 9:
             CH[17]="Murder";
             break;
@@ -464,16 +455,16 @@ public class Character
         JSONParser parser = new JSONParser();
         JSONObject adolescenceJson;
         try {
-            adolescenceJson = (JSONObject) parser.parse(new FileReader("clas\\Adolescence.json"));
+            adolescenceJson = (JSONObject) parser.parse(new FileReader("json\\Adolescence.json"));
             JSONArray clasArrayJson = (JSONArray) adolescenceJson.get("class");
             JSONObject classNameJson = (JSONObject) clasArrayJson.get(CRollResults[18]-1);
             adolescence[0] = (String) classNameJson.get("name");
 
             JSONArray backgroundJson = (JSONArray) classNameJson.get("desc");
-            adolescence[1] = (String) backgroundJson.get((int) CRollResults[19]/10);
+            adolescence[1] = (String) backgroundJson.get((int) CRollResults[19]%10);
 
             JSONArray associateArrayJson = (JSONArray) adolescenceJson.get("associate");
-            adolescence[2] = (String) associateArrayJson.get((int) CRollResults[20]/5);
+            adolescence[2] = (String) associateArrayJson.get((int) CRollResults[20]%20);
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -487,8 +478,8 @@ public class Character
         }
         
 
-        if(CRollResults[20]>=26 & CRollResults[20]<=30){relationshipEventFlag=1;}
-        if(adolescence[0]=="Bard" && adolescence[1]=="For Love: When you were young, you tried to express yourself to your beloved using song or poetry. Driven by desire, you refined your skill and learned to articulate raw emotion in story and song. You gain access to the Ear for Music religion trait and the True Love story feat. You roll a d12 instead of a d20 on Table 1–56: Romantic Relationships.")
+        if(CRollResults[20]%20 == 6){relationshipEventFlag=1;}
+        if(adolescence[0]=="Bard" && CRollResults[19]%10 == 3)
         {relationshipEventFlag=1;}
         for (String str : adolescence){
             System.out.println("adolescence["+i+"] = "+str);

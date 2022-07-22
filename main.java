@@ -10,19 +10,14 @@ import org.json.simple.parser.ParseException;
  */
 public class main
 {
-    final static int NBCHARAC =5;
+    final static int NBCHARAC = 5;
     public static void main (String[] args){
         int[][] mean = new int[NBCHARAC][2];
         int[] fMean = {0,0};
         for(int i=0;i<NBCHARAC;i++){
             Character tempCharac;
-            try {
-                tempCharac = new Character();
-                mean[i]=tempCharac.CPValue;
-            } catch (IOException | ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            tempCharac = new Character();
+            mean[i]=tempCharac.CPValue;
         }
         for(int i=0;i<NBCHARAC;i++){
             fMean[0]+=mean[i][0];

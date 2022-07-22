@@ -377,7 +377,7 @@ public class Character
 
         JSONParser parser = new JSONParser();
         JSONObject eventJson;
-        
+
         try {
             eventJson = (JSONObject) parser.parse(new FileReader("json\\MajorEvent.json"));
             JSONArray eventArrayJson = (JSONArray) eventJson.get("event");
@@ -396,13 +396,13 @@ public class Character
         }
         
         switch(CRollResults[15]%20){
-            case 9:
+            case 8:
             CH[17]="Murder";
             break;
-            case 10:
+            case 9:
             relationshipEventFlag = 1;
             break;
-            case 11:
+            case 10:
             CH[17]=setCrime();
             CH[18]="Imprisoned";
             break;
@@ -458,7 +458,7 @@ public class Character
             adolescenceJson = (JSONObject) parser.parse(new FileReader("json\\Adolescence.json"));
             JSONArray clasArrayJson = (JSONArray) adolescenceJson.get("class");
             JSONObject classNameJson = (JSONObject) clasArrayJson.get(CRollResults[18]-1);
-            adolescence[0] = (String) classNameJson.get("name");
+            adolescence[0] = "You became a " + (String) classNameJson.get("name");
 
             JSONArray backgroundJson = (JSONArray) classNameJson.get("desc");
             adolescence[1] = (String) backgroundJson.get((int) CRollResults[19]%10);
@@ -479,7 +479,7 @@ public class Character
         
 
         if(CRollResults[20]%20 == 6){relationshipEventFlag=1;}
-        if(adolescence[0]=="Bard" && CRollResults[19]%10 == 3)
+        if(adolescence[0]=="You became a Bard" && CRollResults[19]%10 == 3)
         {relationshipEventFlag=1;}
         for (String str : adolescence){
             System.out.println("adolescence["+i+"] = "+str);

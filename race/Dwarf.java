@@ -44,9 +44,11 @@ public class Dwarf implements Race
             while(CRR[4]>Race.unHmldDieValue[i]){i++;}  //Unusual Homeland set
             childhood[3]=Race.unHmldResult[i];
         }
+
         i=0; 
         while(CRR[5]>parentsDieValue[i]){i++;}      //Parents set
         childhood[4]=parentsResult[i];
+
         i=0;
         while(CRR[6]>siblingsDieValue[i]){i++;}     //Nb of siblings set
         if(bioSiblResults[i]+adoptedSiblResults[i]>0){

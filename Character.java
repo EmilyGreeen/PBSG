@@ -382,7 +382,7 @@ public class Character
             eventJson = (JSONObject) parser.parse(new FileReader("json\\MajorEvent.json"));
             JSONArray eventArrayJson = (JSONArray) eventJson.get("event");
 
-            CH[16] = (String) eventArrayJson.get((int) CRollResults[15]%20);
+            CH[16] = (String) eventArrayJson.get((int) CRollResults[15]-1);
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -395,7 +395,7 @@ public class Character
             e.printStackTrace();
         }
         
-        switch(CRollResults[15]%20){
+        switch(CRollResults[15]){
             case 8:
             CH[17]="Murder";
             break;
@@ -461,10 +461,10 @@ public class Character
             adolescence[0] = "You became a " + (String) classNameJson.get("name");
 
             JSONArray backgroundJson = (JSONArray) classNameJson.get("desc");
-            adolescence[1] = (String) backgroundJson.get((int) CRollResults[19]%10);
+            adolescence[1] = (String) backgroundJson.get((int) CRollResults[19]-1);
 
             JSONArray associateArrayJson = (JSONArray) adolescenceJson.get("associate");
-            adolescence[2] = (String) associateArrayJson.get((int) CRollResults[20]%20);
+            adolescence[2] = (String) associateArrayJson.get((int) CRollResults[20]-1);
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -478,8 +478,8 @@ public class Character
         }
         
 
-        if(CRollResults[20]%20 == 6){relationshipEventFlag=1;}
-        if(adolescence[0]=="You became a Bard" && CRollResults[19]%10 == 3)
+        if(CRollResults[20] == 5){relationshipEventFlag=1;}
+        if(adolescence[0]=="You became a Bard" && CRollResults[19] == 3)
         {relationshipEventFlag=1;}
         for (String str : adolescence){
             System.out.println("adolescence["+i+"] = "+str);
@@ -717,7 +717,7 @@ public class Character
 
     public int [] rollCharacterDie(){
         int [] characterDieToRoll = 
-            {   3,      //Gender                                   [0]     Y
+            {   3,      //Gender                                [0]     Y
                 7,      //Race                                          Y
                 100,    //Homeland                                      Y
                 100,    //Foreign Homeland                              Y
@@ -732,12 +732,12 @@ public class Character
                 75,     //Parents Profession - high birth               Y
                 100,    //Adoptive Parents race                         Y
                 100,    //Nobility                                      Y
-                100,    //Major Childhood Event                 [15]    Y
+                20,    //Major Childhood Event                 [15]     Y
                 100,    //Crime                                         Y
                 100,    //Punishment                                    Y
                 19,     //Class                                         Y
-                100,    //Background                                    Y
-                100,    //Influencial Associate                 [20]    Y
+                10,    //Background                                     Y
+                20,    //Influencial Associate                 [20]     Y
                 20,     //Conflict - All Alignement Allowed             Y
                 13,     //Conflict - Non Evil Alignement                Y
                 7,      //Conflict - Paladin                            Y

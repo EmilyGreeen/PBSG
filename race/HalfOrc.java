@@ -12,12 +12,30 @@ public class HalfOrc implements Race
     private RollDice die = new RollDice();
 
     public int[] hmldDieValue = {25,60,75,90,100};
-    public String[] hmldResult = {"Subterranean","Orc Settlement","Human Homeland: ","No Homeland","Unusual Homeland"};
-    public int[] humanHmldDieValue = {50,85,95,100,-1};
-    public String[] humanHmldResult = {"Town","City","Frontier","Unusual Homeland","Error"};
+    public String[] hmldResult = {
+        "You were raised in a deam Subterranean home.",
+        "You were raised in an Orc Settlement.",
+        "You were raised in a Human Homeland: ",
+        "You have No True Homeland, and have always been on the run.",
+        "You grew up in an Unusual Homeland for your people:"
+    };
+
+    public int[] humanHmldDieValue = {50,85,100};
+    public String[] humanHmldResult = {
+        "You grew up in a Town.",
+        "You grew up in a large City.",
+        "You grew up in a Frontier region."
+    };
 
     public int[] parentsDieValue = {11,23,35,47,59,100};
-    public String[] parentsResult = {"Both parents","Orc Father","Human Father","Human Mother","Orc Mother","Both parents dead"};
+    public String[] parentsResult = {
+        "Both of your parents are alive.",
+        "Only your father(orc) is alive.",
+        "Only your father(human) is alive.",
+        "Only your mother(human) is alive.",
+        "Only your mother(orc) is alive.",
+        "Both of your parents are dead."
+    };
 
     public int[] siblingsDieValue = {60,70,80,100};
     public int[] bioSiblResults = {0,0,1,0};
@@ -53,10 +71,10 @@ public class HalfOrc implements Race
         childhood[4]=parentsResult[i];
         i=0;
         while(CRR[6]>siblingsDieValue[i]){i++;}     //Nb of siblings set
-        if(i==0){childhood[9] = halfSiblResults[i]+" orc halfsiblings";}   //HalfSiblings set
-        if(i==1){childhood[9] = halfSiblResults[i]+" human halfsiblings";} //HalfSiblings set
-        if(i==2){childhood[5] = "1 biological half orcish sibling";}   //Biological sibling set
-        if(i==3){childhood[5] = "Only child";}
+        if(i==0){childhood[9] = "You have " + halfSiblResults[i]+" orc halfsiblings";}   //HalfSiblings set
+        if(i==1){childhood[9] = "You have " + halfSiblResults[i]+" human halfsiblings";} //HalfSiblings set
+        if(i==2){childhood[5] = "You have one biological half orcish sibling";}   //Biological sibling set
+        if(i==3){childhood[5] = "You're an Only child";}
         return childhood;
     }
 }

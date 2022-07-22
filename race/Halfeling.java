@@ -11,11 +11,21 @@ public class Halfeling implements Race
 {
     private RollDice die = new RollDice();
 
-    public int[] hmldDieValue = {50,80,95,100,-1};
-    public String[] hmldResult = {"Halfling Settlement","Human Settlement","Traveling Caravan","Unusual Homeland","Error"};
+    public int[] hmldDieValue = {50,80,95,100};
+    public String[] hmldResult = {
+        "You grew up in a Halfling Settlement.",
+        "You grew up in a Human Settlement.",
+        "You grew up in a Traveling Caravan.",
+        "You grew up in an Unusual Homeland for your people:"
+    };
 
     public int[] parentsDieValue = {70,80,90,100};
-    public String[] parentsResult = {"Both parents","Father","Mother","Both parents dead"};
+    public String[] parentsResult = {
+        "Both of your parents are alive.",
+        "Only your father is alive.",
+        "Only your mother is alive.",
+        "Both of your parents are dead."
+    };
 
     public int[] siblingsDieValue = {30,90,100,-1};
     public int[] bioSiblResults = {die.rollDY(2),die.rollDY(4,1),0,0};
@@ -38,8 +48,8 @@ public class Halfeling implements Race
         childhood[4]=parentsResult[i];
         i=0;
         while(CRR[6]>siblingsDieValue[i]){i++;}     //Nb of siblings set
-        if(i<2){childhood[5] = bioSiblResults[i]+" biological siblings";}
-        else{childhood[5] = "Only child";}
+        if(i<2){childhood[5] = "You have " + bioSiblResults[i]+" biological siblings";}
+        else{childhood[5] = "You're an Only child";}
         return childhood;
     }
 }

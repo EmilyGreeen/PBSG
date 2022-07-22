@@ -24,7 +24,7 @@ public class Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String CName;
-    private String CSex;
+    private String CGender;
     private String CRace;
     private Race race;
     //private String CHomeland;
@@ -72,10 +72,13 @@ public class Character
          */
         switch(CRollResults[0]){
             case 1:
-            CSex="Male";
+            CGender="Male";
             break;
             case 2:
-            CSex="Female";
+            CGender="Female";
+            break;
+            case 3:
+            CGender="Non-binary";
             break;
         }
         switch(CRollResults[1]){
@@ -143,17 +146,20 @@ public class Character
         CName=s;
     }
 
-    public String getSex(){
-        return CSex;
+    public String getGender(){
+        return CGender;
     }
 
-    public void setSex(int i){        
+    public void setGender(int i){        
         switch(i){
             case 1:
-            CSex="male";
+            CGender="Male";
             break;
             case 2:
-            CSex="female";
+            CGender="Female";
+            break;
+            case 3:
+            CGender="Non-binary";
             break;
         }
     }
@@ -161,7 +167,6 @@ public class Character
     public String getCRace(){
         return CRace;
     }
-
 
     public Race getRace(){
         return race;
@@ -203,7 +208,7 @@ public class Character
     public String[] setChildhood(Race Cr){
         int i=0;
         childhood = Cr.setEarlyLife(CRollResults);
-        childhood[0]=CSex;
+        childhood[0]="You are a " + CGender;
         childhood[1]=CRace;
 
         childhood=setCircumstanceOfBirth(childhood);
@@ -482,7 +487,7 @@ public class Character
         }
         
 
-        if(CRollResults[20]>=21 & CRollResults[20]<=25){relationshipEventFlag=1;}
+        if(CRollResults[20]>=26 & CRollResults[20]<=30){relationshipEventFlag=1;}
         if(adolescence[0]=="Bard" && adolescence[1]=="For Love: When you were young, you tried to express yourself to your beloved using song or poetry. Driven by desire, you refined your skill and learned to articulate raw emotion in story and song. You gain access to the Ear for Music religion trait and the True Love story feat. You roll a d12 instead of a d20 on Table 1–56: Romantic Relationships.")
         {relationshipEventFlag=1;}
         for (String str : adolescence){
@@ -721,7 +726,7 @@ public class Character
 
     public int [] rollCharacterDie(){
         int [] characterDieToRoll = 
-            {   2,      //Sex                                   [0]     Y
+            {   3,      //Gender                                   [0]     Y
                 7,      //Race                                          Y
                 100,    //Homeland                                      Y
                 100,    //Foreign Homeland                              Y

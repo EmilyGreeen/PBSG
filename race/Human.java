@@ -11,12 +11,22 @@ public class Human implements Race
 {
     private RollDice die = new RollDice();
     
-    public int[] hmldDieValue = {50,85,95,100,-1};
-    public String[] hmldResult = {"Town","City","Frontier","Unusual Homeland","Error"};
+    public int[] hmldDieValue = {50,85,95,100};
+    public String[] hmldResult = {
+        "You grew up in a Town.",
+        "You grew up in a large City.",
+        "You grew up in a Frontier region.",
+        "You grew up in an Unusual Homeland for your people:"
+    };
     
     
     public int[] parentsDieValue = {50,70,90,100};
-    public String[] parentsResult = {"Both parents","Father","Mother","Both parents dead"};
+    public String[] parentsResult = {
+        "Both of your parents are alive.",
+        "Only your father is alive.",
+        "Only your mother is alive.",
+        "Both of your parents are dead."
+    };
     
     public int[] siblingsDieValue = {40,70,90,100};
     public int[] bioSiblResults = {die.rollDY(2),die.rollDY(2),die.rollDY(4)+die.rollDY(4),0};
@@ -39,9 +49,9 @@ public class Human implements Race
         childhood[4]=parentsResult[i];
         i=0;
         while(CRR[6]>siblingsDieValue[i]){i++;}     //nb of Siblings set
-        childhood[5] = bioSiblResults[i]+" biological siblings";
+        childhood[5] = "You have " + bioSiblResults[i]+" biological siblings";
         if(i==1){
-            childhood[9] = halfSiblResults[i]+" halfsiblings";
+            childhood[9] = "You have " + halfSiblResults[i]+" halfsiblings";
             for(int j=0;j<halfSiblResults[1];j++){     //Race of half siblings set
                 if(CRR[7+i]<=50){
                     childhood[10+j]="Half sibling #"+(j+1)+" is half elven";

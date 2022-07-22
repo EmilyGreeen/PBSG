@@ -11,15 +11,37 @@ public class HalfElf implements Race
 {
     private RollDice die = new RollDice();
 
-    public int[] hmldDieValue = {25,75,95,100,-1};
-    public String[] hmldResult = {"Elven Homeland: ","Human Homeland: ","Forest","Unusual Homeland: ","Error"};
-    public int[] elfHmldDieValue = {60,80,95,100,-1};
-    public String[] elfHmldResult = {"Forest","City","Town","Unusual Homeland: ","Error"};
-    public int[] humanHmldDieValue = {50,85,95,100,-1};
-    public String[] humanHmldResult = {"Town","City","Frontier","Unusual Homeland: ","Error"};
+    public int[] hmldDieValue = {25,75,95,100};
+    public String[] hmldResult = {
+        "You were raised in an Elven Homeland: ",
+        "You were raised in a Human Homeland: ",
+        "You were raised in the Forest.", 
+        "You grew up in an Unusual Homeland for your people:"
+    };
+    
+    public int[] elfHmldDieValue = {60,80,100};
+    public String[] elfHmldResult = {
+        "You were raised in the Forest.",
+        "You grew up in a large elven City.",
+        "You grew up in an elven Town."
+    };
+    
+    public int[] humanHmldDieValue = {50,85,100};
+    public String[] humanHmldResult = {
+        "You grew up in a human Town.",
+        "You grew up in a large human City.",
+        "You grew up in a Frontier region."
+    };
 
     public int[] parentsDieValue = {21,38,55,72,89,100};
-    public String[] parentsResult = {"Both parents","Human Father","Elven Father","Human Mother","Elven Mother","Both parents dead"};
+    public String[] parentsResult = {
+        "Both of your parents are alive.",
+        "Only your father(human) is alive.",
+        "Only your father(elven) is alive.",
+        "Only your mother(human) is alive.",
+        "Only your mother(elven) is alive.",
+        "Both of your parents are dead."
+    };
 
     public int[] siblingsDieValue = {20,30,100,100};
     public int[] bioSiblResults = {0,1,0,0};
@@ -62,7 +84,7 @@ public class HalfElf implements Race
         i=0;
         while(CRR[6]>siblingsDieValue[i]){i++;}     //Nb of siblings set
         if(i==0){
-            childhood[9] = halfSiblResults[0]+" halfsiblings";
+            childhood[9] = "You have " + halfSiblResults[0]+" halfsiblings";
             for(i=0; i<halfSiblResults[0];i++){     //Race of half siblings set
                 if(CRR[7+i]<=50){
                     childhood[10+i]="Half sibling #"+(i+1)+" is elven";
@@ -72,8 +94,8 @@ public class HalfElf implements Race
             }
         }
 
-        else if(i==1){childhood[5] ="1 biological half-elven sibling";}
-        else{childhood[5] = "Only child";}
+        else if(i==1){childhood[5] = "You have one biological half-elven sibling";}
+        else{childhood[5] = "You're an Only child";}
         return childhood;
     }
 }
